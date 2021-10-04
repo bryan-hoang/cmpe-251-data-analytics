@@ -1,0 +1,33 @@
+% Provides macros manipulating strings of tokens.
+\RequirePackage{xstring}
+
+% Store the jobname as a string with category 11 characters.
+\edef\normaljobname{\expandafter\scantokens\expandafter{\jobname\noexpand}}
+\StrBehind{\normaljobname}{exer-}[\exercisenumber]
+
+\documentclass[
+  coursecode={CMPE 251},
+  assignmentname={Exercise \exercisenumber},
+  studentnumber=20053722,
+  name={Bryan Hoang}
+]{
+  ltxanswer%
+}
+
+\marksnotpoints{}
+
+\usepackage{bch-style}
+
+\begin{document}
+  \begin{questions}
+    \question[2]{}
+    Build a (supervised) neural network to classify the wines (Supervised neural network = multilayer perceptron = MLP in the jargon.)
+
+    Because of the time required, use only 5-fold cross validation. Report briefly on the performance of this technique, including computational time required.
+
+    Neural networks often perform better when their inputs are normalized, often to the interval [0,1] or [-1,+1]. Try using the Normalizer node to see if this helps.
+    \begin{solution}
+      42.
+    \end{solution}
+  \end{questions}
+\end{document}
