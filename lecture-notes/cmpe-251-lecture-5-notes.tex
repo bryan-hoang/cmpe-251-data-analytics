@@ -1,0 +1,70 @@
+\documentclass[]{memoir}
+
+% \usepackage{bch-style}
+
+\title{CMPE 251: Lecture 5}
+\author{Bryan Hoang}
+
+\begin{document}
+  \maketitle
+
+  \section*{Introduction}
+  \begin{itemize}
+    \item Using basketball dataset (win loss \& margins) found on OnQ under week 6.
+    \item What's the point of these datasets?
+          \begin{itemize}
+            \item The use of a model made form this data depends from case to case. There's no single rule for the usefulness of a model.
+            \item Hindsight?
+          \end{itemize}
+  \end{itemize}
+  \section*{Design = Good Choices}
+  \begin{itemize}
+    \item Generic workflow: file read \(\rightarrow\) binning \& normalization \& missing value inputation \(\rightarrow\) model \(\rightarrow\) scorer \begin{itemize}
+            \item Diagram (Based James?)
+            \item Random forests and Bagging/boosting diverge from the more typical workflows.
+          \end{itemize}
+    \item When would one use binning? \begin{itemize}
+            \item Mapping numerical values to categorical values which better reflect meaning (e.g., numeric ages to categorical age ranges)
+          \end{itemize}
+    \item When would one use normalization? \begin{itemize}
+            \item Depends on what will happen later in the workflow.
+            \item e.g., using neural networks, k-nearest neighbour
+          \end{itemize}
+    \item Should try to design from "Right to left" of workflow since we're usually focused on the end result.
+    \item Next stage: \begin{itemize}
+            \item Partitioning
+            \item cross-validation (e.g., x-partition, x-aggregator)
+            \item Bootstrap sample or Out Of Bag (OOB)
+          \end{itemize}
+    \item Then we build the model
+    \item Finally, score the results
+    \item Clustering is thrown into all of that somehow
+    \item Types of Models: \begin{itemize}
+            \item One R (Never use)
+            \item Bayes \begin{itemize}
+                    \item Bad for redundant attributes
+                    \item Good when there are many attributes that may be useful
+                  \end{itemize}
+            \item k-NN \begin{itemize}
+                    \item Bad for datasets with a large number of datapoints (big n), since scales based off of the size of the dataset
+                    \item Great for datasets where the classes aren't clumped together (geometrically). Hard to determine with testing it.
+                  \end{itemize}
+            \item Decision trees (Never use)
+            \item SVMs \begin{itemize}
+                    \item Bad for problems with a large number of classes
+                    \item Pretty good go to option otherwise (always)
+                  \end{itemize}
+            \item Rules (Never use)
+            \item Random forests \begin{itemize}
+                    \item No immediate major downsides
+                    \item Therefore, practically always a good option
+                  \end{itemize}
+            \item Neural networks \begin{itemize}
+                    \item Bad if training cost is an important factor (big n)
+                    \item Great when there's a small amount of info in each attribute. e.g., images, audio
+                  \end{itemize}
+          \end{itemize}
+    \item From the left side, use knowledge of dataset to make decisions on the workflow
+    \item From the right side, use knowledge of the problem to make decisions on the workflow
+  \end{itemize}
+\end{document}
