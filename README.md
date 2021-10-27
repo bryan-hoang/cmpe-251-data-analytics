@@ -1,2 +1,3 @@
-# cmpe-251-exercises
-My answers to exercise sheets for CISC/CMPE 251 Data Analytics F21
+# cmpe-251
+
+Exercises, pictures, and project files for CISC/CMPE 251 Data Analytics F21.
