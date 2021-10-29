@@ -1,1 +1,19 @@
 \lecture{7}{2021-10-26}{}
+
+\begin{itemize}
+  \item Looking at basketballwinloss data
+  \item RF out of bag sampling
+        \begin{itemize}
+          \item Looking at prediction confidences can help determine why model might be misbehaving.
+          \item Attribute statistics help see what the RF is determining to be a significant attribute.
+        \end{itemize}
+  \item Tree Ensemble learner is a generalization of RF (not the same thing, doesn't select attributes).
+        \begin{itemize}
+          \item Options: Tree Options \& Ensemble configuration.
+          \item Out of bag predictions: model count should avg about a third
+        \end{itemize}
+  \item A method for determining the most important attributes involves using a math function \& sorting the important (splits times candidates)
+        \begin{itemize}
+          \item Iteratively remove unimportant attributes to try and increase prediction accuracy.
+        \end{itemize}
+\end{itemize}
