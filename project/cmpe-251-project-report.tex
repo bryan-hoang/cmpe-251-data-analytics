@@ -1,28 +1,55 @@
-% Provides macros manipulating strings of tokens.
-\RequirePackage{xstring}
-
-% Store the jobname as a string with category 11 characters.
-\edef\normaljobname{\expandafter\scantokens\expandafter{\jobname\noexpand}}
-\StrBehind{\normaljobname}{exer-}[\exercisenumber]
-
 \documentclass[
-  coursecode={CISC/CMPE 251},
-  assignmentname={Exercise \exercisenumber},
-  studentnumber=20053722,
-  name={Bryan Hoang}
-]{
-  ltxanswer%
-}
+  oneside,
+  12pt,
+  draft,
+  % final,
+]{memoir}
 
-\marksnotpoints{}
+\setlrmarginsandblock{1in}{1in}{*}
+\setulmarginsandblock{1in}{*}{1}
+\checkandfixthelayout[nearest]
+
+% Change formatting of chapter titles
+\RequirePackage{titlesec}
+
+\titleformat{\chapter}{\normalfont\bfseries\huge}{\thechapter}{0.75em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{24pt}
+
+% Provide control over the typesetting of the \maketitle and \thanks commands.
+\RequirePackage{titling}
+
+% Vertically center \maketitle
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
+% Changing the title of the table of contents section.
+\RequirePackage[english]{babel}
+
+\addto\captionsenglish{\renewcommand*\contentsname{Table Of Contents}}
 
 \usepackage{bch-style}
 
+\title{
+  \textbf{CMPE 251 Project Report}\\
+  Online Shopping Website Analysis
+}
+\author{Bryan Hoang}
+\date{\today}
+
 \begin{document}
-  \begin{questions}
-    \question[2]{}
-    \begin{solution}
-      42.
-    \end{solution}
-  \end{questions}
+  \begin{titlingpage}
+    \maketitle
+  \end{titlingpage}
+  \frontmatter
+  \tableofcontents
+  \listoffigures
+  \listoftables
+  \mainmatter{}
+  \chapter{Properties of the Dataset}
+  \chapter{Clustering}
+  \chapter{Predictors}
+  \section{Random Forests}
+  \section{Support Vector Machines (SVMs)}
+  \chapter{Attribute Selection and Ranking}
+  \chapter{Actionable Conclusions}
 \end{document}
