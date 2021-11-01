@@ -9,12 +9,6 @@
 \setulmarginsandblock{1in}{*}{1}
 \checkandfixthelayout[nearest]
 
-% Change formatting of chapter titles
-\RequirePackage{titlesec}
-
-\titleformat{\chapter}{\normalfont\bfseries\huge}{\thechapter}{0.75em}{}
-\titlespacing*{\chapter}{0pt}{0pt}{24pt}
-
 % Provide control over the typesetting of the \maketitle and \thanks commands.
 \RequirePackage{titling}
 
@@ -26,6 +20,15 @@
 \RequirePackage[english]{babel}
 
 \addto\captionsenglish{\renewcommand*\contentsname{Table Of Contents}}
+
+% Change formatting of chapter titles
+\RequirePackage{titlesec}
+
+\titleformat{\chapter}{\normalfont\bfseries\huge}{\thechapter}{0.75em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{24pt}
+
+% Plain header and footer (page number centered at the bottom)
+\pagestyle{plain}
 
 \usepackage{bch-style}
 
