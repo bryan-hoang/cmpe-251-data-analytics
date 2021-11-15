@@ -1,36 +1,11 @@
 \documentclass[
-  oneside,
-  12pt,
   draft,
   % final,
-]{memoir}
-
-\setlrmarginsandblock{1in}{1in}{*}
-\setulmarginsandblock{1in}{*}{1}
-\checkandfixthelayout[nearest]
-
-% Provide control over the typesetting of the \maketitle and \thanks commands.
-\RequirePackage{titling}
-
-% Vertically center \maketitle
-\renewcommand\maketitlehooka{\null\mbox{}\vfill}
-\renewcommand\maketitlehookd{\vfill\null}
-
-% Changing the title of the table of contents section.
-\RequirePackage[english]{babel}
-
-\addto\captionsenglish{\renewcommand*\contentsname{Table Of Contents}}
-
-% Change formatting of chapter titles
-\RequirePackage{titlesec}
-
-\titleformat{\chapter}{\normalfont\bfseries\huge}{\thechapter}{0.75em}{}
-\titlespacing*{\chapter}{0pt}{0pt}{24pt}
-
-% Plain header and footer (page number centered at the bottom)
-\pagestyle{plain}
+]{memreport}
 
 \usepackage{bch-style}
+
+\addbibresource{\main/bibliography.bib}
 
 \title{
   \textbf{CMPE 251 Project Report}\\
@@ -44,15 +19,87 @@
     \maketitle
   \end{titlingpage}
   \frontmatter
+  \clearpage
   \tableofcontents
+  \clearpage
   \listoffigures
+  \clearpage
   \listoftables
   \mainmatter{}
+
+  \subfile{chapters/1-introduction}
   \chapter{Properties of the Dataset}
-  \chapter{Clustering}
-  \chapter{Predictors}
-  \section{Random Forests}
-  \section{Support Vector Machines (SVMs)}
+  \begin{itemize}
+    \item no missing values
+    \item Mention dataset used (header/noheader, numeric vs categorical)
+  \end{itemize}
+
+  \section{Percentage of Revenue classes}
+  \begin{itemize}
+    \item High percentage of Revenue classes are false, which will affect the evaluation of certain predictors
+  \end{itemize}
+
+  \section{Distribution}
+  \begin{itemize}
+    \item A lot of then numerical attributes take on a monomodal distribution (right skewed)
+    \item Given that a lot of the revenues are false, the peaks in the data make indicate correlation with the revenue ~84\%
+  \end{itemize}
+
+  \section{Correlation}
+  \begin{itemize}
+    \item Rank/linear correlation (numeric data)
+    \item Comment on ratio/percentage of true/false for the revenue's class.
+  \end{itemize}
+
   \chapter{Attribute Selection and Ranking}
+
+  \begin{itemize}
+    \item Filter out attributes as done in class
+    \item 8/9
+    \item Rank based on important from math node
+  \end{itemize}
+
+  \chapter{Clustering}
+
+  \section{k-Means}
+  \begin{itemize}
+    \item \# clusters: 2-5?
+    \item Conclusions there!
+  \end{itemize}
+
+  \section{EM}
+  \begin{itemize}
+    \item \# clusters: 2-5?
+    \item 1 cluster captures who buys, try to target other clusters
+  \end{itemize}
+
+  \section{SVD (Singular Vector Decomposition)}
+  \begin{itemize}
+    \item use matlab script to make it christmas and comment on clumpiness
+    \item Bounce rate and Exit rate are super correlated.
+  \end{itemize}
+
+  \chapter{Predictors}
+
+  \section{Random Forests}
+  \begin{itemize}
+    \item ~500 trees good number
+    \item Compare filtered vs unfiltered attributes
+  \end{itemize}
+
+  \section{Support Vector Machines (SVMs)}
+  \begin{itemize}
+    \item rule out svm due to low accuracy
+    \item Consider baysian since it's suppose to be used with all attributes when you don't know which ones are important
+  \end{itemize}
+
+  \section{k-NN}
+  \begin{itemize}
+    \item Consider based on clustering in previous section
+  \end{itemize}
+
   \chapter{Actionable Conclusions}
+  \begin{itemize}
+    \item Draw conclusions on attributes associated with eventual buyers, and suggest improvements to the website
+  \end{itemize}
 \end{document}
