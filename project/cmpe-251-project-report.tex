@@ -18,49 +18,22 @@
   \begin{titlingpage}
     \maketitle
   \end{titlingpage}
-  \frontmatter
+
+  \frontmatter{}
+
   \clearpage
   \tableofcontents
   \clearpage
   \listoffigures
   \clearpage
   \listoftables
+
   \mainmatter{}
 
   \subfile{chapters/1-introduction}
-  \chapter{Properties of the Dataset}
-  \begin{itemize}
-    \item no missing values
-    \item Mention dataset used (header/noheader, numeric vs categorical)
-  \end{itemize}
-
-  \section{Percentage of Revenue classes}
-  \begin{itemize}
-    \item High percentage of Revenue classes are false, which will affect the evaluation of certain predictors
-  \end{itemize}
-
-  \section{Distribution}
-  \begin{itemize}
-    \item A lot of then numerical attributes take on a monomodal distribution (right skewed)
-    \item Given that a lot of the revenues are false, the peaks in the data make indicate correlation with the revenue ~84\%
-  \end{itemize}
-
-  \section{Correlation}
-  \begin{itemize}
-    \item Rank/linear correlation (numeric data)
-    \item Comment on ratio/percentage of true/false for the revenue's class.
-  \end{itemize}
-
-  \chapter{Attribute Selection and Ranking}
-
-  \begin{itemize}
-    \item Filter out attributes as done in class
-    \item 8/9
-    \item Rank based on important from math node
-  \end{itemize}
-
+  \subfile{chapters/2-dataset-properties}
+  \subfile{chapters/3-attribute-selection-ranking}
   \chapter{Clustering}
-
   \section{k-Means}
   \begin{itemize}
     \item \# clusters: 2-5?
@@ -102,4 +75,6 @@
   \begin{itemize}
     \item Draw conclusions on attributes associated with eventual buyers, and suggest improvements to the website
   \end{itemize}
+
+  \backmatter{}
 \end{document}
