@@ -25,7 +25,6 @@
   \tableofcontents
   \clearpage
   \listoffigures
-  \clearpage
   \listoftables
 
   \mainmatter{}
@@ -33,48 +32,9 @@
   \subfile{chapters/1-introduction}
   \subfile{chapters/2-dataset-properties}
   \subfile{chapters/3-attribute-selection-ranking}
-  \chapter{Clustering}
-  \section{k-Means}
-  \begin{itemize}
-    \item \# clusters: 2-5?
-    \item Conclusions there!
-  \end{itemize}
-
-  \section{EM}
-  \begin{itemize}
-    \item \# clusters: 2-5?
-    \item 1 cluster captures who buys, try to target other clusters
-  \end{itemize}
-
-  \section{SVD (Singular Vector Decomposition)}
-  \begin{itemize}
-    \item use matlab script to make it christmas and comment on clumpiness
-    \item Bounce rate and Exit rate are super correlated.
-  \end{itemize}
-
-  \chapter{Predictors}
-
-  \section{Random Forests}
-  \begin{itemize}
-    \item ~500 trees good number
-    \item Compare filtered vs unfiltered attributes
-  \end{itemize}
-
-  \section{Support Vector Machines (SVMs)}
-  \begin{itemize}
-    \item rule out svm due to low accuracy
-    \item Consider baysian since it's suppose to be used with all attributes when you don't know which ones are important
-  \end{itemize}
-
-  \section{k-NN}
-  \begin{itemize}
-    \item Consider based on clustering in previous section
-  \end{itemize}
-
-  \chapter{Actionable Conclusions}
-  \begin{itemize}
-    \item Draw conclusions on attributes associated with eventual buyers, and suggest improvements to the website
-  \end{itemize}
+  \subfile{chapters/4-clustering}
+  \subfile{chapters/5-predictors}
+  \subfile{chapters/6-actionable-conclusions}
 
   \backmatter{}
 \end{document}

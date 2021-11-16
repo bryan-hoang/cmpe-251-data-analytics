@@ -1,0 +1,21 @@
+\providecommand{\main}{..}
+\documentclass[../cmpe-251-project-report.tex]{subfiles}
+\externaldocument{1-introduction}
+\externaldocument{2-dataset-properties}
+\externaldocument{3-attribute-selection-ranking}
+\externaldocument{4-clustering}
+\externaldocument{5-predictors}
+
+\begin{document}
+  \chapter{Actionable Conclusions}
+  \label{ch:actionable-conclusions}
+  \section{Predicting Who Will Make a Purchase}
+  Due to the nature of the dataset, a RF predictor built with is the best model to use to determine if a visitor will make a purchase. By using Gini Index for the split criterion in conjunction with 500 models, its prediction accuracy of \qty{89.9}{\percent} is an improvement over the prediction accuracy of \qty{84.5}{\percent} from naively guessing that every visitor will not make a purchase. Nozama may want to consider using the RF predictor to help them test improvements to their website during testing.
+
+  \section{Properties of Visitors Who Make a Purchase}
+  Analysis of the data reveals that Nozama can capitalize on their Page Value, Exit Rate, and Bounce Rate metrics to increase the number of visitors who will make a purchase on their website.
+
+  For instance, Nozama should restructure their website so that pages with high Page Values should be easier to navigate to. e.g., feature the pages prominently in navigation elements. Since pages with high Page Values are visited by potential buyers, making sure they're exposed to as many people as possible will increase the likelihood of a visitor making a purchase.
+
+  Pages with high Exit Rates lead to make visitors not purchase anything. So Nozama should investigate why visitors are leaving that page, and may reconsider the design, layout, and content of similar pages.
+\end{document}
