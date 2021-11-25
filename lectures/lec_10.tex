@@ -1,0 +1,37 @@
+\lecture{10}{2021-11-17}{}
+
+The man has something against Nancy Pelosi?
+
+\section{Distance Based Clustering}
+
+\begin{itemize}
+  \item Discussing distance based clustering (and going through KNIME workflow)
+  \item Configuration:
+        \begin{itemize}
+          \item Different distance calculations. Can't go wrong with Euclidean. Also have Hamming and \(L^{\infty}\).
+          \item DBSCAN --- \(\varepsilon\) a challenge to configure, as it depends more on local properties of the dataset and less on the global properties. Should play around by decreasing it to increase the \# of clusters.
+          \item DBSCAN --- Min \# of clusters can sometimes be ignored, depending on initial results.
+        \end{itemize}
+  \item Also pretty bad for the basketball data set
+  \item Recall last week that trying SVD on a very "blobbly" dataset didn't result in good predictions.
+\end{itemize}
+
+\section{Visualization}
+
+\begin{itemize}
+  \item Chernoff faces
+        \begin{itemize}
+          \item Very easy for humans to see what face is an outlier depending on which attribute we tend to zero in on as ``different''.
+          \item Things get weird when you try to use Chernoff faces on Tinder to find ``the one''. The faces may make you biased towards someone who wasn't what you were originally looking for
+          \item Baseball Chernoff Faces
+          \item \ldots Are they useful? Nahhh. Funny nonetheless.
+        \end{itemize}
+  \item Back to Knime:
+        \begin{itemize}
+          \item Visualizing correlation matrices.\ e.g., Lack of red (negative correlation) may indicate a bias towards collecting data only on indicators of winning, not on indicators of losing.
+          \item Using a Scatter plot to visualize relationships between attributes of interest. Avoid binary attributes if possible since they don't reveal too much information of there's lots of overlap.
+          \item Try using a Histogram as well! Customize attributes and binning to ascertain properties such as distribution.
+          \item Head Map: Coloured Planar view of the dataset. Answer Q's like ``Are most winning games the same?'', see some differences between winning and losing heat maps
+          \item Parallel coordinate plot: Hard to explain with words, pretty picture (kinda looks like a Neural net where a layer is instead an axis for an attribute, and the paths are records now). Helps view correlation based on amount of crossover of records between parallel attribute lines. Highlighting different records can reveal insights such as ``losing games can still have high free throw stats compared to highlighted winning games''. Can rearrange attribute axis, for reasons. Doesn't scale to large \# of attributes, just like for Neural networks! Hmmm.
+        \end{itemize}
+\end{itemize}

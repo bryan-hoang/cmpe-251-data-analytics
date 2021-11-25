@@ -1,0 +1,38 @@
+\lecture{10}{2021-11-24}{Social media and data analysis}
+
+Big Tech companies, like Facebook \& Google, tend to not use Data Analytics in the most ethical way\ldots
+
+\section{Danger \#1: Selling your \textit{Personally Identifiable Information (PII)} \& attention for free stuff}
+
+\begin{itemize}
+  \item Big Tech gives you personalize ads and free stuff
+  \item You give them PII and attention
+  \item Repeat the cycle initiated by the Big Tech company (``stickiness''). e.g., Misinformation i prevalent since people may be seeking it out.
+  \item Analogy: You are the ``\textit{Dragon}''
+  \item The D.A. they use improves personalization, and eventually narrow down on \textbf{price sensitivity}. Then they sell it to everyone else
+\end{itemize}
+
+\section{Danger \#2: Social media is inherently biased against you}
+
+\begin{itemize}
+  \item People tend to post good things, not bad things
+  \item The structure reinforces the bias
+  \item e.g., The Friend Paradox - Homophily (ho-moph-ily),``birds of a feather flock together''.
+
+        Insert Figure here.
+\end{itemize}
+
+\section{Previous Exam Question}
+
+\begin{itemize}
+  \item Q's will have a ``twist'', to make us think about what the actual problem to solve is. Don't just apply the 5 steps of data analytics.
+  \item e.g., Baseball data sorted based on ascending salary (400 k - 2.8 mil). How does a player's performance relate to their salary, and whether it's fair? (won't be given data on exam, mostly for demonstration during lecture)
+        \begin{itemize}
+          \item To assess ``fairness'', consider \textbf{clustering} players to see if salaries do reflect similarly performant players. Be careful with ranking/selecting attributes.
+          \item Some figuress from SVD is shown in MATLAB, although we won't have this on the exam.
+          \item Seeing high performing players with low salaries amongst other high paid players implies players are being paid unfairly.
+          \item In KNIME, looking at correlation between attributes for analyzing attributes. Then used EM clustering (good go to). To decide \# of clusters, try a couple (3-5). Meh results, as expected form SVD figures form earlier.
+          \item Few data points (e.g., potential outliers) should be taken with a grain of salt,
+          \item Conclusion: It is unfair. How to fix it? Based on analysis.
+        \end{itemize}
+\end{itemize}
