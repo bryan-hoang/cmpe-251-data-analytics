@@ -1,1 +1,52 @@
-\lecture{12}{2021-12-01}{}
+\newpage
+\lecture{12}{2021-12-01}{Design Questions}
+
+\section*{Customer Price Sensitivity}
+\begin{itemize}
+  \item Online retailers, such as Amazon, has the advantage of adjusting "shelf" prices easily to determine people's individual price (in)sensitivities.
+        \begin{itemize}
+          \item Columns: 2000 most popular products
+          \item Rows: Customers
+          \item Entries:
+                \begin{itemize}
+                  \item 0: Customer hasn't bought.
+                  \item 1: Customer bought at \textbf{lowest} price.
+                  \item 2: '' \textbf{midranged} ''.
+                  \item 3: '' \textbf{highest} ''.
+                \end{itemize}
+        \end{itemize}
+  \item How to predict price insensitivity?
+  \item Cluster so that price insensitive people are farther away from the origin. (e.g., 3s vs 0s).
+  \item To make prediction easier, consider designing a label. How? Row sum divided by \# of non-zero entries.
+  \item What type of clustering?
+        \begin{itemize}
+          \item K-means? Nah, groups seem more like onion slices rather than blobs
+          \item EM? Reasoning for clusters makes sense.\@ e.g., frugal, middle, cash money. So should expect 3 reasonable groups
+                \begin{itemize}
+                  \item Spoiler: It does!
+                \end{itemize}
+          \item Density? Nah. Nothing alludes to density based clusters.
+          \item Hierarchical? Too many rows (large amount of data), and we don't care about the fine details.
+          \item SVD? Maybe. 2k dimensional space into 3d space.
+                \begin{itemize}
+                  \item Sometimes doesn't reveal clusters with clean separation.
+                \end{itemize}
+        \end{itemize}
+  \item Prediction (based on new label):
+        \begin{itemize}
+          \item Baye's Rule? Too many attributes.
+          \item kNN? Might be good based on EM clustering results.
+          \item NN? Nope, a lot of attributes and data and attributes may not be related to each other.
+          \item SVM? Meh.
+          \item RF? Probably!
+                \begin{itemize}
+                  \item Pretty accurate!
+                \end{itemize}
+        \end{itemize}
+\end{itemize}
+
+\section*{Outline for an answer}
+\begin{itemize}
+  \item An answer. We can design a way to calculate the price insensitivity by first designing a label (details). One digression has an issue (mention it). Another digression, all products aren't created equal. So we'll weight the score function based on the average of a attribute and the std dev of the column sums. Then talk about \textbf{clustering} to help decide on a predictor and analyze other properties of the dataset. Argue for appropriate clustering methods and why others aren't reasonable.\@ e.g., ones that are clearly good or clearly bad. Then talk about predictors in a similar manner. Then talk about actionable tasks from design. Continue to mention digressions to aim for that A+.
+  \item Comment on weaknesses (i.e., digressions) to suggested approaches and think of alternatives/further improvements to get an A+.
+\end{itemize}
