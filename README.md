@@ -1,3 +1,7 @@
-# cmpe-251
+# CMPE 251: Data Analytics
 
-Exercises, pictures, and project files for CISC/CMPE 251 Data Analytics F21.
+My submissions for exercises and projects in a Data Analytics course as Queen's
+Unversity ([CMPE 251][cmpe-251]).
+
+[cmpe-251]:
+  https://www.queensu.ca/academic-calendar/engineering-applied-sciences/academic-plans/computer-engineering/#coursestext
